@@ -117,10 +117,10 @@ async def clear_server_text_channel(channel, before_date):
     try:
         deleted = await channel.purge(limit=10000, check=is_me, bulk=True, before=before_date)
         if len(deleted) > 0:
-            cprint(f"{server} - {channel} : {len(deleted)} messages", "green")
+            cprint(f"{channel.guild} - {channel} : {len(deleted)} messages", "green")
         else:
             cprint(f"No messages found in {channel}", "yellow")
-    except:
+    except Exception as e:
         cprint(f"Can't delete in {channel.guild} - {channel}", "red")
 
 def is_me(m):
