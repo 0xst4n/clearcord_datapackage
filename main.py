@@ -28,7 +28,7 @@ if not before_date:
         except ValueError:
             before_date = datetime.datetime.today() - datetime.timedelta(days=30)
             print()
-        cprint(f"Deleting messages before {before_date}\n", "blue")
+cprint(f"Deleting messages before {before_date}\n", "blue")
 
 ignore_friends = True
 cprint("Tell me if you also want to delete messages in friend DMs", "cyan")
