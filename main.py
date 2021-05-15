@@ -1,6 +1,9 @@
 import discord, time, os, datetime, json
 from termcolor import colored, cprint
+import colorama
 from discord.ext import commands
+
+colorama.init()
  
 prefix = '*'
 bot = commands.Bot(command_prefix=prefix, case_insensitive=True, self_bot=True)
