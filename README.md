@@ -10,3 +10,6 @@ After retrieving these, all messages in the channel will be deleted (depending o
 The script will guide you through the process
 
 You will have to provide a user token and the path to the unzipped discord data package
+
+# TODO
+ - Support for Group DM
