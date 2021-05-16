@@ -77,8 +77,8 @@ async def on_ready():
                 cprint(f"{k} - This channel has most likely ceased to exist.", "magenta")
                 continue
 
-    for dmc in dm_text_channels:
-        await clear_dm_channel(dmc, before_date)
+    # for dmc in dm_text_channels:
+    #     await clear_dm_channel(dmc, before_date)
 
     cprint("\nChecking the server channels\n", "blue")
 
@@ -116,14 +116,15 @@ async def clear_dm_channel(channel, before_date, ignore_friends=True):
         cprint(f"No messages found in {channel.name}", "yellow")
 
 async def clear_server_text_channel(channel, before_date):
-    cprint(f"Looking in {channel.guild} - {channel}..", "green")
+    cprint(f"Looking in {channel.guild} - {channel} - {channel.id}..", "green")
     try:
-        deleted = await channel.purge(limit=10000, check=is_me, bulk=True, before=before_date)
+        deleted = await channel.purge(limit=300000, check=is_me, bulk=True, before=before_date)
         if len(deleted) > 0:
-            cprint(f"{channel.guild} - {channel} : {len(deleted)} messages", "green")
+            cprint(f"Deleted {len(deleted)} messages in {channel.guild} - {channel} :", "green")
         else:
             cprint(f"No messages found in {channel}", "yellow")
     except Exception as e:
+        print(e)
         cprint(f"Can't delete in {channel.guild} - {channel}", "red")
 
 def is_me(m):
