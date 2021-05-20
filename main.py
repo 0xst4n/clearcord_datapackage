@@ -77,8 +77,8 @@ async def on_ready():
                 cprint(f"{k} - This channel has most likely ceased to exist.", "magenta")
                 continue
 
-    # for dmc in dm_text_channels:
-    #     await clear_dm_channel(dmc, before_date)
+    for dmc in dm_text_channels:
+        await clear_dm_channel(dmc, before_date)
 
     cprint("\nChecking the server channels\n", "blue")
 
