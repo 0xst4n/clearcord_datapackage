@@ -3,6 +3,12 @@ from termcolor import colored, cprint
 import colorama
 from discord.ext import commands
 
+import logging, re, warnings
+logging.captureWarnings(True)
+warnings.filterwarnings('always', category=DeprecationWarning,
+                        module=r'^{0}\.'.format(re.escape(__name__)))
+warnings.warn("This is a DeprecationWarning",category=DeprecationWarning)
+
 colorama.init()
  
 prefix = '*'

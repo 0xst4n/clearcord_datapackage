@@ -11,5 +11,13 @@ The script will guide you through the process
 
 You will have to provide a user token and the path to the unzipped discord data package
 
+# Building the .exe
+
+`pip install pyinstaller`
+
+`pyinstaller main.py --onefile -n 'clearcord_datapackage' -i NONE`
+
+.exe in `./dist`
+
 # TODO
  - Support for Group DM
