@@ -33,7 +33,7 @@ if not before_date:
         before_date = datetime.datetime.today() - datetime.timedelta(days=30)
     else:
         try:
-            before_date = datetime.datetime.strptime(before_date, '%Y-%m-%d').date()
+            before_date = datetime.datetime.strptime(before_date, '%Y-%m-%d')
         except ValueError:
             before_date = datetime.datetime.today() - datetime.timedelta(days=30)
             print()
